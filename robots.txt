@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getanchoredstudios-pixel.github.io/charm-city-mobile-mechanic/sitemap.xml
