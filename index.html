@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Charm City Mobile Mechanic | Baltimore Mobile Auto Repair</title>
 <meta name="description" content="Mobile mechanic serving Baltimore and surrounding areas. Brakes, oil changes, alternators, AC, suspension and more, done at your home or work. Cars, SUVs, trucks, vans and tractors.">
+<link rel="canonical" href="https://getanchoredstudios-pixel.github.io/charm-city-mobile-mechanic/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Charm City Mobile Mechanic | Baltimore Mobile Auto Repair">
+<meta property="og:description" content="Straight answers and mobile auto repair at your home, job, or parking spot in Baltimore and surrounding areas.">
+<meta property="og:url" content="https://getanchoredstudios-pixel.github.io/charm-city-mobile-mechanic/">
+<meta name="theme-color" content="#121417">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23121417%22/><text x=%2232%22 y=%2244%22 text-anchor=%22middle%22 font-size=%2240%22>🔧</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,6 +32,9 @@
   .btn-primary:hover{background:var(--accent-dk)}
   .btn-ghost{border-color:var(--line);color:var(--text)}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .skip-link{position:fixed;left:12px;top:-80px;z-index:100;background:var(--accent);color:#111;padding:10px 14px;border-radius:8px;font-weight:700}
+  .skip-link:focus{top:12px}
 
   /* nav */
   header{position:sticky;top:0;z-index:10;background:rgba(18,20,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -76,6 +86,11 @@
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
   .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px}
   .chip{background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:.9rem;color:var(--muted)}
+  .trust-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .trust-item{background:var(--panel);padding:22px 20px;text-align:center}
+  .trust-item strong{display:block;font-family:Oswald,sans-serif;text-transform:uppercase;font-size:1.05rem}
+  .trust-item span{color:var(--muted);font-size:.9rem}
+  @media(max-width:700px){.trust-strip{grid-template-columns:1fr}.trust-item{padding:15px 20px}}
 
   section{padding:80px 0;scroll-margin-top:68px}
   .section-head{max-width:640px;margin-bottom:40px}
@@ -108,6 +123,15 @@
   .promise li strong{display:block;margin-bottom:2px}
   .promise li span{color:var(--muted);font-size:.95rem}
   @media(max-width:820px){.promise{grid-template-columns:1fr}}
+  .founder{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center}
+  .founder-mark{aspect-ratio:1;border:1px solid var(--line);border-radius:var(--radius);display:grid;place-items:center;background:radial-gradient(circle at 70% 20%,rgba(255,122,26,.25),transparent 45%),var(--panel2);font:700 4.2rem Oswald,sans-serif;color:var(--accent)}
+  .founder h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:14px}
+  .founder p{color:var(--muted);margin-top:10px;max-width:720px}
+  @media(max-width:650px){.founder{grid-template-columns:1fr}.founder-mark{width:130px}}
+  .faq{display:grid;gap:12px;max-width:820px}
+  details{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:0 18px}
+  summary{cursor:pointer;font-weight:700;padding:17px 30px 17px 0}
+  details p{color:var(--muted);padding:0 0 18px}
 
   /* payment strip */
   .pay{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:var(--panel2);border:1px solid var(--line);border-radius:var(--radius);padding:22px 26px;margin-top:40px}
@@ -132,6 +156,7 @@
   .form-msg{display:none;padding:14px 16px;border-radius:10px;font-weight:500}
   .form-msg.ok{display:block;background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.4)}
   .form-msg.err{display:block;background:rgba(231,76,60,.12);border:1px solid rgba(231,76,60,.4)}
+  .form-note{color:var(--muted);font-size:.85rem}
 
   footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
@@ -139,15 +164,22 @@
   /* mobile sticky call bar */
   .callbar{display:none}
   @media(max-width:760px){
-    .callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;bottom:0;left:0;right:0;z-index:20}
+    .callbar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;bottom:0;left:0;right:0;z-index:20}
     .callbar a{padding:16px;text-align:center;font-weight:700;text-decoration:none}
     .callbar a:first-child{background:var(--accent);color:#111}
+    .callbar a:nth-child(2){background:#20242a}
     .callbar a:last-child{background:#2a2f36}
     body{padding-bottom:56px}
   }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Charm City Mobile Mechanic","url":"https://getanchoredstudios-pixel.github.io/charm-city-mobile-mechanic/","telephone":"+1-667-967-9166","email":"charmcitymechanic@gmail.com","areaServed":"Baltimore and surrounding areas","description":"Mobile auto repair for cars, SUVs, trucks, vans and tractors in Baltimore and surrounding areas.","paymentAccepted":"Cash, Zelle, Cash App"}
+</script>
 </head>
 <body>
+
+<a class="skip-link" href="#top">Skip to main content</a>
 
 <header>
   <div class="wrap nav">
@@ -167,8 +199,8 @@
         </div>
       </div>
       <a href="#how">How It Works</a>
+      <a href="#about">Meet Curtis</a>
       <a href="#quote">Get a Quote</a>
-      <a href="#pay" id="navPay">Pay Now</a>
       <a href="tel:+16679679166" class="btn btn-primary">Call (667) 967-9166</a>
     </nav>
   </div>
@@ -182,13 +214,20 @@
       <p>Skip the tow truck and the waiting room. I bring the tools and the know-how to your home, job, or wherever your vehicle is parked, across Baltimore and the surrounding area.</p>
       <div class="hero-ctas">
         <a href="#quote" class="btn btn-primary">Request a Free Quote</a>
-        <a href="tel:+16679679166" class="btn btn-ghost">Call or Text (667) 967-9166</a>
+        <a href="tel:+16679679166" class="btn btn-ghost">Call (667) 967-9166</a>
+        <a href="sms:+16679679166" class="btn btn-ghost">Text Curtis</a>
       </div>
       <div class="chips">
         <span class="chip">Cars</span><span class="chip">SUVs</span><span class="chip">Trucks</span><span class="chip">Vans</span><span class="chip">Tractors</span>
       </div>
     </div>
   </section>
+
+  <div class="trust-strip" aria-label="What to expect">
+    <div class="trust-item"><strong>Work directly with Curtis</strong><span>One mechanic from first call to finished job</span></div>
+    <div class="trust-item"><strong>Know before work starts</strong><span>Get the scope and price before approving repairs</span></div>
+    <div class="trust-item"><strong>Pay after the job</strong><span>Payment is due when the agreed work is complete</span></div>
+  </div>
 
   <section id="services" class="alt">
     <div class="wrap">
@@ -242,7 +281,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2>How It Works</h2>
-        <p>No appointments three days out. No rides home from the shop.</p>
+        <p>A simple process, with no waiting room and no tow when the job can be handled on site.</p>
       </div>
       <div class="steps">
         <div class="step"><h3>Tell me what's up</h3><p>Send the quote form or call/text with your vehicle and the problem.</p></div>
@@ -258,7 +297,7 @@
       <div class="promise">
         <blockquote>Let's get it done right the first time.</blockquote>
         <ul>
-          <li><strong>No repeat trips</strong><span>The goal is a fix that stays fixed, not a customer who has to call back.</span></li>
+          <li><strong>Careful diagnosis</strong><span>Get a clear explanation of the problem and the recommended repair.</span></li>
           <li><strong>One mechanic, start to finish</strong><span>You talk to the person actually doing the work.</span></li>
           <li><strong>Straight answers</strong><span>You'll know what's wrong and what it costs before any work starts.</span></li>
         </ul>
@@ -270,17 +309,30 @@
     </div>
   </section>
 
+  <section id="about">
+    <div class="wrap founder">
+      <div class="founder-mark" aria-hidden="true">CC</div>
+      <div>
+        <span class="eyebrow">A local startup built on direct service</span>
+        <h2>Meet Curtis</h2>
+        <p>Charm City Mobile Mechanic is a growing Baltimore-area business built around a straightforward idea: bring practical vehicle repair to the customer and communicate clearly from the first call through the completed job.</p>
+        <p>When you reach out, you speak with the mechanic doing the work. Curtis will review the vehicle and problem, confirm whether the job can be completed on site, and explain the price before work begins.</p>
+        <a href="#quote" class="btn btn-primary" style="margin-top:22px">Tell Curtis What's Going On</a>
+      </div>
+    </div>
+  </section>
+
   <section id="quote">
     <div class="wrap">
       <div class="section-head">
         <h2>Request a Quote</h2>
-        <p>Fill this out and I'll reach back out, usually the same day. Need help fast? Just call.</p>
+        <p>Share the basics and I'll follow up to confirm availability and next steps. Need help fast? Call or text.</p>
       </div>
       <div class="quote">
         <div class="contact-box">
           <div class="contact-item"><small>Call or text</small><a href="tel:+16679679166">(667) 967-9166</a></div>
           <div class="contact-item"><small>Email</small><a href="mailto:charmcitymechanic@gmail.com">charmcitymechanic@gmail.com</a></div>
-          <div class="contact-item"><small>Service area</small><div>Baltimore &amp; surrounding areas</div></div>
+          <div class="contact-item"><small>Service area</small><div>Baltimore &amp; surrounding areas — send your ZIP to confirm</div></div>
           <div class="contact-item"><small>Vehicles</small><div>Cars, SUVs, trucks, vans &amp; tractors</div></div>
         </div>
 
@@ -289,49 +341,31 @@
           <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
 
           <div class="row">
-            <div><label for="name">Full name *</label><input id="name" name="name" required></div>
-            <div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" required></div>
+            <div><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required></div>
+            <div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
           </div>
           <div class="row">
-            <div><label for="email">Email</label><input id="email" name="email" type="email"></div>
-            <div><label for="location">Where's the vehicle? (address or ZIP) *</label><input id="location" name="location" required></div>
+            <div><label for="location">Vehicle ZIP code *</label><input id="location" name="location" autocomplete="postal-code" inputmode="numeric" placeholder="e.g. 21201" required></div>
+            <div><label for="vehicle">Year / make / model *</label><input id="vehicle" name="vehicle" autocomplete="off" placeholder="e.g. 2014 Ford F-150" required></div>
           </div>
-          <div class="row">
-            <div><label for="vehicle">Year / make / model *</label><input id="vehicle" name="vehicle" placeholder="e.g. 2014 Ford F-150" required></div>
-            <div>
-              <label for="service">Service needed *</label>
-              <select id="service" name="service" required>
-                <option value="">Select one</option>
-                <option>Oil change / maintenance</option>
-                <option>Brakes</option>
-                <option>Engine / electrical</option>
-                <option>Cooling / A/C</option>
-                <option>Suspension / steering</option>
-                <option>Lockout / spare tire</option>
-                <option>Not sure, need a diagnosis</option>
-                <option>Something else</option>
-              </select>
-            </div>
+          <div>
+            <label for="service">Service needed *</label>
+            <select id="service" name="service" required>
+              <option value="">Select one</option>
+              <option>Oil change / maintenance</option>
+              <option>Brakes</option>
+              <option>Engine / electrical</option>
+              <option>Cooling / A/C</option>
+              <option>Suspension / steering</option>
+              <option>Lockout / spare tire</option>
+              <option>Not sure, need a diagnosis</option>
+              <option>Something else</option>
+            </select>
           </div>
-          <div class="row">
-            <div>
-              <label for="timing">When do you need it?</label>
-              <select id="timing" name="timing">
-                <option>As soon as possible</option>
-                <option>This week</option>
-                <option>Flexible</option>
-              </select>
-            </div>
-            <div>
-              <label for="contactPref">Best way to reach you</label>
-              <select id="contactPref" name="contact_preference">
-                <option>Call</option><option>Text</option><option>Email</option>
-              </select>
-            </div>
-          </div>
-          <div><label for="details">What's going on? *</label><textarea id="details" name="details" placeholder="Noises, warning lights, when it started, anything that helps." required></textarea></div>
+          <div><label for="details">What's going on? *</label><textarea id="details" name="details" placeholder="Noises, warning lights, when it started, and when you need help." required></textarea></div>
 
           <button type="submit" class="btn btn-primary">Send My Request</button>
+          <p class="form-note">Your ZIP is enough for the first message. Share the exact address only after confirming the appointment. By submitting, you agree to be contacted about this request.</p>
           <div id="formMsg" class="form-msg" role="status"></div>
         </form>
       </div>
@@ -341,8 +375,9 @@
   <section id="pay" class="alt">
     <div class="wrap">
       <div class="section-head">
-        <h2>Pay Now</h2>
-        <p>Job done? Pay the amount Curtis quoted you using whichever option is easiest. Please include your name in the note.</p>
+        <span class="eyebrow">For existing customers</span>
+        <h2>Payment After Service</h2>
+        <p>Only use this section after Curtis has completed your job and confirmed the amount due. Please include your name in the payment note.</p>
       </div>
       <div class="pay-grid">
         <div class="pay-card" id="payCashApp">
@@ -367,6 +402,19 @@
       <p class="note">Prefer cash? That works too. Pay in person when the job's finished.</p>
     </div>
   </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head"><h2>Before You Book</h2><p>Clear answers to common questions from first-time customers.</p></div>
+      <div class="faq">
+        <details><summary>Is the first quote free?</summary><p>Send the quote form or call to describe the problem. Curtis will explain what can be quoted from that information and whether an in-person diagnosis is needed before you commit to work.</p></details>
+        <details><summary>Are there travel or diagnostic fees?</summary><p>Fees depend on the location and the type of diagnosis required. Any applicable charge will be explained before a visit is scheduled.</p></details>
+        <details><summary>What areas do you serve?</summary><p>Charm City Mobile Mechanic serves Baltimore and surrounding areas. Send your ZIP code to confirm availability for your location.</p></details>
+        <details><summary>When do I pay?</summary><p>Payment is due after the agreed work is complete. Do not send payment from this website before Curtis confirms the amount.</p></details>
+        <details><summary>What if my repair needs a shop?</summary><p>Not every repair is a safe fit for mobile service. Curtis will review the problem and let you know whether it can be handled at your location.</p></details>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -377,7 +425,8 @@
 </footer>
 
 <div class="callbar">
-  <a href="tel:+16679679166">Call Now</a>
+  <a href="tel:+16679679166">Call</a>
+  <a href="sms:+16679679166">Text</a>
   <a href="#quote">Get a Quote</a>
 </div>
 
@@ -409,7 +458,7 @@
       });
     }
     if (PAY.cardLink) document.querySelector('[data-pay-link="card"]').href = PAY.cardLink;
-    if (!tag && !PAY.zelle && !PAY.cardLink) { show("pay", false); show("navPay", false); }
+    if (!tag && !PAY.zelle && !PAY.cardLink) show("pay", false);
   })();
 
   /* nav: dropdown + mobile menu */
