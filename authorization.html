@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service Authorization | Charm City Mobile Mechanic</title>
+<meta name="description" content="Review and electronically sign a Charm City Mobile Mechanic service authorization.">
+<link rel="canonical" href="https://getanchoredstudios-pixel.github.io/charm-city-mobile-mechanic/authorization.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Service Authorization | Charm City Mobile Mechanic">
+<meta property="og:description" content="Review and electronically sign a Charm City Mobile Mechanic service authorization.">
+<meta property="og:url" content="https://getanchoredstudios-pixel.github.io/charm-city-mobile-mechanic/authorization.html">
+<meta name="theme-color" content="#121417">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23121417%22/><text x=%2232%22 y=%2244%22 text-anchor=%22middle%22 font-size=%2240%22>🔧</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoRepair","name":"Charm City Mobile Mechanic","url":"https://getanchoredstudios-pixel.github.io/charm-city-mobile-mechanic/","telephone":"+1-667-967-9166","email":"charmcitymechanic@gmail.com","areaServed":"Baltimore and surrounding areas","description":"Mobile auto repair for cars, SUVs, trucks, vans and tractors in Baltimore and surrounding areas.","paymentAccepted":"Cash, Zelle, Cash App"}</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">Charm City <span>Mobile Mechanic</span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="quote.html">Get a Quote</a>
+      <a href="authorization.html" aria-current="page">Sign Authorization</a>
+      <a href="payment.html">Customer Payment</a>
+      <a href="tel:+16679679166" class="btn btn-primary">Call (667) 967-9166</a>
+    </nav>
+  </div>
+</header>
+<main id="main-content">
+<section class="page-hero"><div class="wrap"><span class="eyebrow">For customers with an approved quote</span><h1>Review and Authorize Your Job</h1><p>Complete this form only after Curtis provides a quote and job number.</p></div></section>
+<section id="authorization">
+    <div class="wrap authorization">
+      <div class="auth-intro">
+        <span class="auth-badge">Complete only after receiving your quote</span>
+        <h2>Service Authorization &amp; Risk Acknowledgment</h2>
+        <p>This form connects your approval to a specific vehicle, quote, price, and scope of work. Review every term before signing.</p>
+        <p>You may ask questions, request a paper form, or decline electronic signing by calling or texting <a href="tel:+16679679166">(667) 967-9166</a>.</p>
+        <button class="btn btn-ghost" id="printAuthorization" type="button">Print / Save a Copy</button>
+      </div>
+
+      <form id="authorizationForm" class="legal-card" action="https://formspree.io/f/mdekjyda" method="POST">
+        <input type="hidden" name="_subject" value="SIGNED service authorization: Charm City Mobile Mechanic">
+        <input type="hidden" name="document_version" value="Service Authorization v1.0 — September 30, 2026">
+        <input type="hidden" name="signed_at" id="signedAt">
+        <input type="hidden" name="record_summary" id="recordSummary">
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+
+        <div>
+          <h3>Customer and job</h3>
+          <div class="row">
+            <div><label for="authName">Customer legal name *</label><input id="authName" name="customer_name" autocomplete="name" required></div>
+            <div><label for="authEmail">Email for your record *</label><input id="authEmail" name="customer_email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="row">
+            <div><label for="authPhone">Phone *</label><input id="authPhone" name="customer_phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+            <div><label for="quoteNumber">Quote / job number *</label><input id="quoteNumber" name="quote_number" placeholder="Provided by Curtis" required></div>
+          </div>
+          <div class="row">
+            <div><label for="authVehicle">Vehicle year / make / model *</label><input id="authVehicle" name="vehicle" required></div>
+            <div><label for="authVin">VIN or license plate *</label><input id="authVin" name="vin_or_plate" autocomplete="off" required></div>
+          </div>
+          <div><label for="serviceLocation">Service location *</label><input id="serviceLocation" name="service_location" autocomplete="street-address" required></div>
+          <div><label for="authorizedWork">Work being authorized *</label><textarea id="authorizedWork" name="authorized_work" placeholder="Use the work description from your quote." required></textarea></div>
+          <div class="row">
+            <div><label for="partsEstimate">Estimated parts *</label><input id="partsEstimate" name="parts_estimate" inputmode="decimal" placeholder="$0.00" required></div>
+            <div><label for="laborEstimate">Estimated labor *</label><input id="laborEstimate" name="labor_estimate" inputmode="decimal" placeholder="$0.00" required></div>
+          </div>
+          <div class="row">
+            <div><label for="surchargeEstimate">Estimated surcharge</label><input id="surchargeEstimate" name="surcharge_estimate" inputmode="decimal" placeholder="$0.00 or None"></div>
+            <div><label for="totalEstimate">Estimated total *</label><input id="totalEstimate" name="estimated_total" inputmode="decimal" placeholder="$0.00" required></div>
+          </div>
+          <div><label for="completionEstimate">Estimated completion date *</label><input id="completionEstimate" name="estimated_completion" type="date" required></div>
+        </div>
+
+        <div>
+          <h3>Authorization and responsibility</h3>
+          <ul>
+            <li>I confirm that I own the vehicle or have authority from its owner to approve the work.</li>
+            <li>I authorize only the work and estimated amount identified above. Additional work or charges require my separate approval.</li>
+            <li>I will provide a lawful, reasonably level, and safe service location with adequate clearance, and will disclose known hazards, vehicle modifications, prior damage, and relevant repair history.</li>
+            <li>I authorize reasonable vehicle movement and a road test when reasonably necessary to diagnose or verify the authorized repair.</li>
+            <li>I understand diagnosis and repair may reveal additional or preexisting problems. I am responsible for loss or damage arising from inaccurate information, undisclosed conditions, customer-supplied parts, unsafe premises, or events outside the mechanic's reasonable control.</li>
+            <li>To the extent permitted by Maryland law, Charm City Mobile Mechanic is not responsible for incidental or consequential loss caused solely by a preexisting defect, an undisclosed condition, or my failure to follow post-service instructions. Nothing here releases liability for gross negligence, willful misconduct, or any responsibility that cannot legally be waived.</li>
+          </ul>
+        </div>
+
+        <div class="notice-box">
+          <h3>Manufacturer Special Policy Adjustment Programs</h3>
+          <p>Federal law requires manufacturers to furnish the National Highway Traffic Safety Administration (N.H.T.S.A.) with bulletins describing any defects in their vehicles. You may obtain copies of these bulletins from either the manufacturer or N.H.T.S.A. In addition, certain consumer publications or organizations publish this information, which may be available for a fee or for free.</p>
+        </div>
+
+        <div class="checkline">
+          <input id="rightsConsent" name="customer_rights_acknowledged" value="Yes" type="checkbox" required>
+          <label for="rightsConsent">I have reviewed the scope, estimate, notices, and limited-liability terms above, had an opportunity to ask questions, and authorize the described work. *</label>
+        </div>
+
+        <div class="checkline">
+          <input id="electronicConsent" name="electronic_records_consent" value="Yes" type="checkbox" required>
+          <label for="electronicConsent"><strong>Separate consent to electronic records and signature:</strong> I agree to conduct this transaction electronically. I can view this HTML form and print or save it as a PDF using my browser. This consent applies only to this service authorization. I may withdraw before submitting or request a paper copy at no charge by calling, texting, or emailing Charm City Mobile Mechanic. *</label>
+        </div>
+
+        <div class="customer-rights">
+          <h3>Customer's Rights</h3>
+          <ul>
+            <li>You may request a written estimate for repairs costing more than $50.</li>
+            <li>You may not be charged more than 10% above a written estimate without your consent.</li>
+            <li>You are entitled to the return of replaced parts unless the parts must be returned to the manufacturer under a warranty agreement.</li>
+            <li>You may not be charged for repairs you did not originally authorize unless you later consent to them.</li>
+          </ul>
+          <p style="margin-top:12px">Because service is performed at a customer-approved location rather than a traditional shop, ask Curtis about responsibility for the vehicle during service and the extent of applicable insurance coverage.</p>
+        </div>
+
+        <div class="row">
+          <div><label for="signatureName">Type your full legal name as your signature *</label><input class="signature-input" id="signatureName" name="electronic_signature" autocomplete="name" required></div>
+          <div><label for="signatureDate">Signature date *</label><input id="signatureDate" name="signature_date" type="date" required></div>
+        </div>
+        <div class="checkline">
+          <input id="signatureIntent" name="signature_intent" value="Yes" type="checkbox" required>
+          <label for="signatureIntent">By checking this box and selecting “Sign and Submit,” I intend my typed name to be my electronic signature on this authorization. *</label>
+        </div>
+
+        <div class="auth-actions">
+          <button type="submit" class="btn btn-primary">Sign and Submit</button>
+          <button type="button" class="btn btn-ghost" id="printAuthorizationBottom">Print / Save Before Signing</button>
+        </div>
+        <p class="form-note">Keep a copy for your records. The signed submission is sent to Charm City Mobile Mechanic. This website form is a practical business document and should be reviewed by a Maryland attorney before relying on it as legal advice.</p>
+        <div id="authorizationMsg" class="form-msg" role="status"></div>
+        <div class="auth-version">Service Authorization v1.0 — September 30, 2026</div>
+      </form>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>&copy; <span id="yr"></span> Charm City Mobile Mechanic &middot; Baltimore, MD</span><a href="tel:+16679679166">(667) 967-9166</a></div></footer>
+<div class="callbar"><a href="tel:+16679679166">Call</a><a href="sms:+16679679166">Text</a><a href="quote.html">Get a Quote</a></div>
+<script src="site.js"></script>
+</body>
+</html>
