@@ -3,223 +3,443 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Charm City Mobile Mechanic | Mobile Auto Repair in Baltimore</title>
-<meta name="description" content="Mobile auto repair in Baltimore. Brakes, starters, alternators, AC, suspension, diagnostics and more, done at your home or job. Call or text 667-967-9166.">
+<title>Charm City Mobile Mechanic | Baltimore Mobile Auto Repair</title>
+<meta name="description" content="Mobile mechanic serving Baltimore and surrounding areas. Brakes, oil changes, alternators, AC, suspension and more, done at your home or work. Cars, SUVs, trucks, vans and tractors.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#14171c; --ink-2:#1d2229; --steel:#2a313b; --line:#343c47;
-    --text:#e9edf2; --muted:#a3adb9; --accent:#f5a524; --accent-ink:#1a1204;
-    --paper:#f4f5f7; --paper-text:#1a1f26; --paper-muted:#56606c;
+    --bg:#121417; --panel:#1b1e23; --panel2:#22262c; --line:#2e333a;
+    --text:#f2f3f5; --muted:#a7adb6; --accent:#ff7a1a; --accent-dk:#e2650a;
+    --radius:14px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:Inter,system-ui,sans-serif;background:var(--ink);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
   a{color:inherit}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-  h1,h2,h3{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;letter-spacing:.5px;line-height:1.1}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;transition:.15s}
+  .btn-primary{background:var(--accent);color:#111}
+  .btn-primary:hover{background:var(--accent-dk)}
+  .btn-ghost{border-color:var(--line);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 
   /* nav */
-  header.top{position:sticky;top:0;z-index:10;background:rgba(20,23,28,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{font-family:Oswald,sans-serif;font-weight:700;font-size:1.15rem;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:10px}
+  header{position:sticky;top:0;z-index:10;background:rgba(18,20,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:Oswald,sans-serif;font-weight:700;font-size:1.25rem;text-transform:uppercase;text-decoration:none}
   .logo span{color:var(--accent)}
-  .logo svg{flex:none}
-  .nav-call{background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;padding:9px 16px;border-radius:6px;font-size:.95rem;white-space:nowrap}
-
-  /* hero */
-  .hero{padding:72px 0 64px;background:
-    radial-gradient(700px 400px at 85% 10%,rgba(245,165,36,.14),transparent 60%),
-    repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.018) 22px 23px);}
-  .eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-  .hero h1{font-size:clamp(2.4rem,7vw,4.6rem);max-width:14ch}
-  .hero h1 em{font-style:normal;color:var(--accent)}
-  .hero p.lead{margin-top:20px;font-size:1.15rem;color:var(--muted);max-width:52ch}
-  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;padding:14px 22px;border-radius:8px;font-size:1rem}
-  .btn-primary{background:var(--accent);color:var(--accent-ink)}
-  .btn-ghost{border:1.5px solid var(--line);color:var(--text)}
-  .btn:hover{filter:brightness(1.08)}
-  .badges{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:36px;color:var(--muted);font-size:.95rem}
-  .badges div{display:flex;align-items:center;gap:8px}
-  .badges svg{color:var(--accent)}
-
-  /* strip */
-  .strip{background:var(--accent);color:var(--accent-ink)}
-  .strip .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 28px;padding:14px 20px;font-family:Oswald,sans-serif;text-transform:uppercase;font-weight:500;letter-spacing:.06em}
-
-  section{padding:72px 0}
-  .sec-head{margin-bottom:36px}
-  .sec-head h2{font-size:clamp(1.9rem,4.5vw,2.8rem)}
-  .sec-head p{color:var(--muted);margin-top:10px;max-width:60ch}
-
-  /* services */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-  .card{background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:24px}
-  .card h3{font-size:1.25rem;color:var(--accent);margin-bottom:12px}
-  .card ul{list-style:none;display:grid;gap:6px;color:var(--text);font-size:.97rem}
-  .card li{padding-left:16px;position:relative}
-  .card li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;background:var(--steel);border-radius:1px}
-  .note{margin-top:20px;color:var(--muted);font-size:.95rem}
-
-  /* how */
-  .light{background:var(--paper);color:var(--paper-text)}
-  .light .sec-head p{color:var(--paper-muted)}
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;counter-reset:s}
-  .step{border-top:3px solid var(--paper-text);padding-top:16px}
-  .step::before{counter-increment:s;content:"0" counter(s);font-family:Oswald,sans-serif;font-size:2.4rem;font-weight:700;color:var(--accent);display:block;line-height:1;margin-bottom:10px}
-  .step h3{font-size:1.2rem;margin-bottom:6px}
-  .step p{color:var(--paper-muted)}
-
-  /* why */
-  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-  .why .card p{color:var(--muted)}
-  .why .card h3{color:var(--text)}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links > a,.dd-toggle{text-decoration:none;color:var(--muted);font-weight:500}
+  .dd-toggle{background:none;border:0;font:inherit;cursor:pointer;padding:0}
+  .nav-links > a.btn{color:#111}
+  .nav-links > a:hover,.dd-toggle:hover{color:var(--text)}
+  .nav-links .btn{padding:10px 18px;color:#111}
+  .dd{position:relative}
+  .dd-toggle::after{content:"";display:inline-block;margin-left:6px;border:5px solid transparent;border-top-color:currentColor;transform:translateY(3px)}
+  .dd-menu{position:absolute;top:calc(100% + 14px);left:-16px;min-width:240px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:8px;display:none;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+  .dd-menu::before{content:"";position:absolute;top:-16px;left:0;right:0;height:16px}
+  .dd:hover .dd-menu,.dd.open .dd-menu{display:block}
+  .dd-menu a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:var(--text)}
+  .dd-menu a:hover{background:rgba(255,122,26,.12);color:var(--accent)}
+  .burger{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;width:44px;height:40px;font-size:1.3rem;cursor:pointer}
+  @media(max-width:760px){
+    .burger{display:block}
+    .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 20px}
+    .nav-links.open{display:flex}
+    .nav-links > a:not(.btn),.dd-toggle{padding:14px 0;border-bottom:1px solid var(--line);text-align:left;width:100%}
+    .dd-menu{position:static;display:none;box-shadow:none;border:0;background:none;padding:0 0 8px 12px;min-width:0}
+    .dd:hover .dd-menu{display:none}
+    .dd.open .dd-menu{display:block}
+    .nav-links .btn{margin-top:14px;justify-content:center}
+  }
 
   /* pay */
-  .pay{display:flex;flex-wrap:wrap;gap:10px}
-  .chip{border:1px solid var(--line);background:var(--ink-2);border-radius:999px;padding:8px 16px;font-weight:500}
+  .pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+  .pay-card{background:var(--panel2);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;gap:10px}
+  .pay-card h3{font-size:1.3rem}
+  .pay-card p{color:var(--muted);flex:1}
+  .pay-card .handle{font-weight:600;font-size:1.1rem;color:var(--text);word-break:break-word}
+  .pay-card .btn{justify-content:center;margin-top:6px}
+  .copy{background:var(--bg);border:1px solid var(--line);color:var(--text)}
 
-  /* contact */
-  .contact{background:var(--ink-2);border-top:1px solid var(--line)}
-  .contact-box{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
-  .contact h2{font-size:clamp(2rem,5vw,3.2rem)}
-  .contact p{color:var(--muted);margin-top:12px}
-  .contact-list{display:grid;gap:12px}
-  .contact-list a{display:flex;align-items:center;gap:14px;text-decoration:none;background:var(--ink);border:1px solid var(--line);border-radius:10px;padding:16px 18px;font-weight:600;word-break:break-word}
-  .contact-list a small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
-  .contact-list svg{color:var(--accent);flex:none}
+  /* hero */
+  .hero{padding:90px 0 80px;background:
+     radial-gradient(900px 400px at 85% 0%,rgba(255,122,26,.18),transparent 60%),
+     repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.015) 22px 44px)}
+  .eyebrow{display:inline-block;color:var(--accent);font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:.8rem;margin-bottom:16px}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:820px}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p{color:var(--muted);font-size:1.15rem;max-width:620px;margin:20px 0 32px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px}
+  .chip{background:var(--panel);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:.9rem;color:var(--muted)}
 
-  footer{padding:28px 0;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
-  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+  section{padding:80px 0;scroll-margin-top:68px}
+  .section-head{max-width:640px;margin-bottom:40px}
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:12px}
+  .section-head p{color:var(--muted)}
+  .alt{background:var(--panel)}
 
-  @media (max-width:720px){
-    .contact-box{grid-template-columns:1fr}
-    section{padding:56px 0}
-    .hero{padding:52px 0 48px}
-    .logo .full{display:none}
+  /* services */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  .card{scroll-margin-top:90px;background:var(--panel2);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .card h3{font-size:1.25rem;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .card h3 .ic{width:34px;height:34px;border-radius:8px;background:rgba(255,122,26,.14);color:var(--accent);display:grid;place-items:center;font-size:1rem}
+  .card ul{list-style:none;display:grid;gap:6px}
+  .card li{color:var(--muted);padding-left:18px;position:relative}
+  .card li::before{content:"";position:absolute;left:0;top:.65em;width:7px;height:7px;background:var(--accent);border-radius:2px}
+  .note{margin-top:22px;color:var(--muted);font-size:.95rem}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:s}
+  .step{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:26px;counter-increment:s}
+  .step::before{content:counter(s,decimal-leading-zero);font-family:Oswald,sans-serif;font-size:2.2rem;color:var(--accent);display:block;margin-bottom:8px}
+  .step h3{font-size:1.15rem;margin-bottom:6px}
+  .step p{color:var(--muted)}
+
+  /* promise */
+  .promise{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+  .promise blockquote{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;border-left:6px solid var(--accent);padding-left:24px}
+  .promise ul{list-style:none;display:grid;gap:14px}
+  .promise li{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .promise li strong{display:block;margin-bottom:2px}
+  .promise li span{color:var(--muted);font-size:.95rem}
+  @media(max-width:820px){.promise{grid-template-columns:1fr}}
+
+  /* payment strip */
+  .pay{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:var(--panel2);border:1px solid var(--line);border-radius:var(--radius);padding:22px 26px;margin-top:40px}
+  .pay-list{display:flex;gap:10px;flex-wrap:wrap}
+  .pay-list span{background:var(--bg);border:1px solid var(--line);padding:6px 14px;border-radius:8px;font-weight:600}
+
+  /* form */
+  .quote{display:grid;grid-template-columns:1fr 1.4fr;gap:40px}
+  @media(max-width:900px){.quote{grid-template-columns:1fr}}
+  .contact-box{display:grid;gap:14px;align-content:start}
+  .contact-item{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .contact-item small{color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-size:.75rem}
+  .contact-item a,.contact-item div{display:block;font-size:1.15rem;font-weight:600;text-decoration:none;margin-top:2px;word-break:break-word}
+  form{background:var(--panel2);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:grid;gap:16px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.row{grid-template-columns:1fr}}
+  label{display:block;font-weight:500;font-size:.92rem;margin-bottom:6px}
+  input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:12px 14px;font:inherit}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
+  textarea{min-height:120px;resize:vertical}
+  .hp{position:absolute;left:-9999px}
+  .form-msg{display:none;padding:14px 16px;border-radius:10px;font-weight:500}
+  .form-msg.ok{display:block;background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.4)}
+  .form-msg.err{display:block;background:rgba(231,76,60,.12);border:1px solid rgba(231,76,60,.4)}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* mobile sticky call bar */
+  .callbar{display:none}
+  @media(max-width:760px){
+    .callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;bottom:0;left:0;right:0;z-index:20}
+    .callbar a{padding:16px;text-align:center;font-weight:700;text-decoration:none}
+    .callbar a:first-child{background:var(--accent);color:#111}
+    .callbar a:last-child{background:#2a2f36}
+    body{padding-bottom:56px}
   }
-  @media (min-width:721px){ .logo .short{display:none} }
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap">
-    <a href="#" class="logo" aria-label="Charm City Mobile Mechanic home">
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#f5a524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>
-      <span class="full">Charm City <span>Mobile Mechanic</span></span>
-      <span class="short">Charm City <span>MM</span></span>
-    </a>
-    <a class="nav-call" href="tel:+16679679166">Call 667-967-9166</a>
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">Charm City <span>Mobile Mechanic</span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav-links" id="navLinks">
+      <div class="dd" id="servicesDD">
+        <button class="dd-toggle" aria-expanded="false">Services</button>
+        <div class="dd-menu">
+          <a href="#svc-maintenance">Maintenance</a>
+          <a href="#svc-brakes">Brakes</a>
+          <a href="#svc-engine">Engine &amp; Electrical</a>
+          <a href="#svc-cooling">Cooling &amp; A/C</a>
+          <a href="#svc-suspension">Suspension &amp; Steering</a>
+          <a href="#svc-roadside">Roadside &amp; Extras</a>
+          <a href="#services">View all services</a>
+        </div>
+      </div>
+      <a href="#how">How It Works</a>
+      <a href="#quote">Get a Quote</a>
+      <a href="#pay" id="navPay">Pay Now</a>
+      <a href="tel:+16679679166" class="btn btn-primary">Call (667) 967-9166</a>
+    </nav>
   </div>
 </header>
 
-<main>
+<main id="top">
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow">Mobile auto repair &middot; Baltimore, MD</span>
-      <h1>The shop comes <em>to you.</em></h1>
-      <p class="lead">Brakes, starters, alternators, AC, suspension and more, fixed in your driveway or parking lot. Let's get it done right the first time.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="tel:+16679679166">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-          Call for a quote
-        </a>
-        <a class="btn btn-ghost" href="sms:+16679679166">Text a photo of the problem</a>
+      <span class="eyebrow">Baltimore's traveling mechanic</span>
+      <h1>Repairs done right <em>the first time.</em> At your driveway.</h1>
+      <p>Skip the tow truck and the waiting room. I bring the tools and the know-how to your home, job, or wherever your vehicle is parked, across Baltimore and the surrounding area.</p>
+      <div class="hero-ctas">
+        <a href="#quote" class="btn btn-primary">Request a Free Quote</a>
+        <a href="tel:+16679679166" class="btn btn-ghost">Call or Text (667) 967-9166</a>
       </div>
-      <div class="badges">
-        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No tow, no waiting room</div>
-        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Upfront quote before work starts</div>
-        <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Cars, trucks, vans, SUVs &amp; tractors</div>
+      <div class="chips">
+        <span class="chip">Cars</span><span class="chip">SUVs</span><span class="chip">Trucks</span><span class="chip">Vans</span><span class="chip">Tractors</span>
       </div>
     </div>
   </section>
 
-  <div class="strip"><div class="wrap"><span>Cars</span><span>SUVs</span><span>Trucks</span><span>Vans</span><span>Tractors</span></div></div>
-
-  <section id="services">
+  <section id="services" class="alt">
     <div class="wrap">
-      <div class="sec-head">
-        <h2>What we fix</h2>
-        <p>Most jobs get done on the spot. Not sure what's wrong? Start with a diagnostic and we'll tell you straight.</p>
+      <div class="section-head">
+        <h2>What I Fix</h2>
+        <p>From routine maintenance to the repairs most people assume need a shop. If it's on this list, I can handle it on site.</p>
       </div>
       <div class="grid">
-        <div class="card"><h3>Brakes</h3><ul>
-          <li>Pads &amp; rotors</li><li>Brake calipers</li><li>Parking brake repair</li></ul></div>
-        <div class="card"><h3>Starting &amp; Electrical</h3><ul>
-          <li>Starters</li><li>Alternators</li><li>Electrical diagnostics</li><li>Lights, bulbs &amp; headlights</li></ul></div>
-        <div class="card"><h3>Engine &amp; Tune-Up</h3><ul>
-          <li>Oil changes</li><li>Spark plugs &amp; wires</li><li>Ignition coils</li><li>Oxygen sensors</li><li>Valve cover gaskets</li><li>Air filters</li></ul></div>
-        <div class="card"><h3>Cooling &amp; AC</h3><ul>
-          <li>Radiators &amp; radiator hoses</li><li>AC repair</li><li>Blower motors</li><li>Vent actuators</li></ul></div>
-        <div class="card"><h3>Fuel System</h3><ul>
-          <li>Fuel pumps</li><li>Fuel filters</li><li>Fuel lines</li></ul></div>
-        <div class="card"><h3>Suspension &amp; Steering</h3><ul>
-          <li>Ball joints</li><li>Upper &amp; lower control arms</li><li>Tie rod ends</li><li>CV axles</li></ul></div>
-        <div class="card"><h3>Quick Fixes</h3><ul>
-          <li>Lockouts</li><li>Spare tire changes</li><li>Wiper replacement</li><li>Mirror replacement</li></ul></div>
-      </div>
-      <p class="note">Don't see your issue? Call or text. If it can be fixed in a driveway, we can probably handle it.</p>
-    </div>
-  </section>
-
-  <section class="light" id="how">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>How it works</h2>
-        <p>No shop visit, no ride home, no sitting around.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><h3>Call or text</h3><p>Tell us the year, make and model and what it's doing. A photo or video helps.</p></div>
-        <div class="step"><h3>Get a quote</h3><p>You'll know the price before any work starts. No surprises.</p></div>
-        <div class="step"><h3>We come to you</h3><p>Home, work, wherever the vehicle is. You go about your day.</p></div>
-        <div class="step"><h3>Pay &amp; drive</h3><p>Pay when the job's done. Cash, Zelle, Cash App or card.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="why">
-    <div class="wrap">
-      <div class="sec-head"><h2>Right the first time</h2></div>
-      <div class="why">
-        <div class="card"><h3>One mechanic, start to finish</h3><p>The person you talk to is the person who works on your vehicle. No hand-offs, no upsell desk.</p></div>
-        <div class="card"><h3>Built for Baltimore</h3><p>Based in southwest Baltimore and serving the city and nearby areas.</p></div>
-        <div class="card"><h3>Easy to pay</h3>
-          <div class="pay" style="margin-top:12px"><span class="chip">Cash</span><span class="chip">Zelle</span><span class="chip">Cash App</span><span class="chip">Credit &amp; debit</span></div>
+        <div class="card" id="svc-maintenance">
+          <h3><span class="ic">&#9881;</span>Maintenance</h3>
+          <ul>
+            <li>Oil changes</li><li>Air filter replacement</li><li>Fuel filters</li><li>Spark plugs &amp; wires</li><li>Wiper replacement</li><li>Headlights, lights &amp; bulbs</li>
+          </ul>
+        </div>
+        <div class="card" id="svc-brakes">
+          <h3><span class="ic">&#9673;</span>Brakes</h3>
+          <ul>
+            <li>Brake pads &amp; rotors</li><li>Brake calipers</li><li>Parking brake repair</li>
+          </ul>
+        </div>
+        <div class="card" id="svc-engine">
+          <h3><span class="ic">&#9889;</span>Engine &amp; Electrical</h3>
+          <ul>
+            <li>Electrical diagnostics</li><li>Alternators</li><li>Starters</li><li>Ignition coils</li><li>Oxygen sensors</li><li>Fuel pumps &amp; fuel lines</li><li>Valve cover gaskets</li>
+          </ul>
+        </div>
+        <div class="card" id="svc-cooling">
+          <h3><span class="ic">&#10052;</span>Cooling &amp; A/C</h3>
+          <ul>
+            <li>A/C repair</li><li>Radiators</li><li>Radiator hoses</li><li>Blower fan motors</li><li>Vent actuators</li>
+          </ul>
+        </div>
+        <div class="card" id="svc-suspension">
+          <h3><span class="ic">&#8645;</span>Suspension &amp; Steering</h3>
+          <ul>
+            <li>Suspension repair</li><li>Ball joints</li><li>Upper &amp; lower control arms</li><li>Tie rod ends</li><li>CV axles</li>
+          </ul>
+        </div>
+        <div class="card" id="svc-roadside">
+          <h3><span class="ic">&#128273;</span>Roadside &amp; Extras</h3>
+          <ul>
+            <li>Lockouts</li><li>Spare tire changes</li><li>Mirror replacement</li>
+          </ul>
         </div>
       </div>
+      <p class="note">Don't see your issue? Describe it in the quote form and I'll let you know if I can take care of it.</p>
     </div>
   </section>
 
-  <section class="contact" id="contact">
-    <div class="wrap contact-box">
-      <div>
-        <h2>Car acting up?</h2>
-        <p>Reach out for a quote. Serving Baltimore City and surrounding areas.</p>
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How It Works</h2>
+        <p>No appointments three days out. No rides home from the shop.</p>
       </div>
-      <div class="contact-list">
-        <a href="tel:+16679679166">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-          <span>667-967-9166<small>Call or text</small></span>
-        </a>
-        <a href="mailto:charmcitymechanic@gmail.com">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-          <span>charmcitymechanic@gmail.com<small>Email</small></span>
-        </a>
+      <div class="steps">
+        <div class="step"><h3>Tell me what's up</h3><p>Send the quote form or call/text with your vehicle and the problem.</p></div>
+        <div class="step"><h3>Get your quote</h3><p>I'll get back to you with a price and a time that works for you.</p></div>
+        <div class="step"><h3>I come to you</h3><p>Home, work, or parking lot. I show up with the parts and tools.</p></div>
+        <div class="step"><h3>Back on the road</h3><p>Pay once the job's done. Cash, Zelle, or Cash App.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="promise">
+        <blockquote>Let's get it done right the first time.</blockquote>
+        <ul>
+          <li><strong>No repeat trips</strong><span>The goal is a fix that stays fixed, not a customer who has to call back.</span></li>
+          <li><strong>One mechanic, start to finish</strong><span>You talk to the person actually doing the work.</span></li>
+          <li><strong>Straight answers</strong><span>You'll know what's wrong and what it costs before any work starts.</span></li>
+        </ul>
+      </div>
+      <div class="pay">
+        <strong>Payment accepted</strong>
+        <div class="pay-list"><span>Cash</span><span>Zelle</span><span>Cash App</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Request a Quote</h2>
+        <p>Fill this out and I'll reach back out, usually the same day. Need help fast? Just call.</p>
+      </div>
+      <div class="quote">
+        <div class="contact-box">
+          <div class="contact-item"><small>Call or text</small><a href="tel:+16679679166">(667) 967-9166</a></div>
+          <div class="contact-item"><small>Email</small><a href="mailto:charmcitymechanic@gmail.com">charmcitymechanic@gmail.com</a></div>
+          <div class="contact-item"><small>Service area</small><div>Baltimore &amp; surrounding areas</div></div>
+          <div class="contact-item"><small>Vehicles</small><div>Cars, SUVs, trucks, vans &amp; tractors</div></div>
+        </div>
+
+        <form id="quoteForm" action="https://formspree.io/f/mdekjyda" method="POST">
+          <input type="hidden" name="_subject" value="New quote request: Charm City Mobile Mechanic">
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+
+          <div class="row">
+            <div><label for="name">Full name *</label><input id="name" name="name" required></div>
+            <div><label for="phone">Phone *</label><input id="phone" name="phone" type="tel" required></div>
+          </div>
+          <div class="row">
+            <div><label for="email">Email</label><input id="email" name="email" type="email"></div>
+            <div><label for="location">Where's the vehicle? (address or ZIP) *</label><input id="location" name="location" required></div>
+          </div>
+          <div class="row">
+            <div><label for="vehicle">Year / make / model *</label><input id="vehicle" name="vehicle" placeholder="e.g. 2014 Ford F-150" required></div>
+            <div>
+              <label for="service">Service needed *</label>
+              <select id="service" name="service" required>
+                <option value="">Select one</option>
+                <option>Oil change / maintenance</option>
+                <option>Brakes</option>
+                <option>Engine / electrical</option>
+                <option>Cooling / A/C</option>
+                <option>Suspension / steering</option>
+                <option>Lockout / spare tire</option>
+                <option>Not sure, need a diagnosis</option>
+                <option>Something else</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="timing">When do you need it?</label>
+              <select id="timing" name="timing">
+                <option>As soon as possible</option>
+                <option>This week</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+            <div>
+              <label for="contactPref">Best way to reach you</label>
+              <select id="contactPref" name="contact_preference">
+                <option>Call</option><option>Text</option><option>Email</option>
+              </select>
+            </div>
+          </div>
+          <div><label for="details">What's going on? *</label><textarea id="details" name="details" placeholder="Noises, warning lights, when it started, anything that helps." required></textarea></div>
+
+          <button type="submit" class="btn btn-primary">Send My Request</button>
+          <div id="formMsg" class="form-msg" role="status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="pay" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Pay Now</h2>
+        <p>Job done? Pay the amount Curtis quoted you using whichever option is easiest. Please include your name in the note.</p>
+      </div>
+      <div class="pay-grid">
+        <div class="pay-card" id="payCashApp">
+          <h3>Cash App</h3>
+          <p>Tap to open Cash App and send your payment.</p>
+          <div class="handle" data-pay="cashtag"></div>
+          <a class="btn btn-primary" data-pay-link="cashapp" target="_blank" rel="noopener">Pay with Cash App</a>
+        </div>
+        <div class="pay-card" id="payZelle">
+          <h3>Zelle</h3>
+          <p>Open your bank's app, choose Zelle, and send to:</p>
+          <div class="handle" data-pay="zelle"></div>
+          <button class="btn copy" type="button" data-copy="zelle">Copy Zelle info</button>
+        </div>
+        <div class="pay-card" id="payCard">
+          <h3>Debit / Credit Card</h3>
+          <p>Secure card checkout. Enter the amount from your quote.</p>
+          <div class="handle">Visa &middot; Mastercard &middot; Amex &middot; Discover</div>
+          <a class="btn btn-primary" data-pay-link="card" target="_blank" rel="noopener">Pay with Card</a>
+        </div>
+      </div>
+      <p class="note">Prefer cash? That works too. Pay in person when the job's finished.</p>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>&copy; <span id="yr">2026</span> Charm City Mobile Mechanic &middot; Baltimore, MD</span>
-    <span>Owner-operated by Curtis Beattie</span>
+    <span>&copy; <span id="yr"></span> Charm City Mobile Mechanic &middot; Baltimore, MD</span>
+    <a href="tel:+16679679166">(667) 967-9166</a>
   </div>
 </footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+
+<div class="callbar">
+  <a href="tel:+16679679166">Call Now</a>
+  <a href="#quote">Get a Quote</a>
+</div>
+
+<script>
+  /* ===== PAYMENT SETTINGS: fill these in. Leave one blank ('') to hide that option. ===== */
+  const PAY = {
+    cashtag: '$keys2anotherworld',
+    zelle:   '',   // phone or email registered with Zelle, e.g. '(667) 967-9166'
+    cardLink:''    // Square or Stripe payment link, e.g. 'https://square.link/u/abc123'
+  };
+
+  (function setupPay(){
+    const tag = PAY.cashtag.replace(/^\$/, '');
+    const show = (id, on) => { document.getElementById(id).style.display = on ? '' : 'none'; };
+    show('payCashApp', !!tag);
+    show('payZelle', !!PAY.zelle);
+    show('payCard', !!PAY.cardLink);
+    if (tag) {
+      document.querySelector('[data-pay="cashtag"]').textContent = '$' + tag;
+      document.querySelector('[data-pay-link="cashapp"]').href = 'https://cash.app/$' + encodeURIComponent(tag);
+    }
+    if (PAY.zelle) {
+      document.querySelector('[data-pay="zelle"]').textContent = PAY.zelle;
+      const b = document.querySelector('[data-copy="zelle"]');
+      b.addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(PAY.zelle); b.textContent = 'Copied!'; }
+        catch { b.textContent = PAY.zelle; }
+        setTimeout(() => b.textContent = 'Copy Zelle info', 2000);
+      });
+    }
+    if (PAY.cardLink) document.querySelector('[data-pay-link="card"]').href = PAY.cardLink;
+    if (!tag && !PAY.zelle && !PAY.cardLink) { show("pay", false); show("navPay", false); }
+  })();
+
+  /* nav: dropdown + mobile menu */
+  const burger = document.getElementById('burger'), navLinks = document.getElementById('navLinks'), dd = document.getElementById('servicesDD');
+  burger.addEventListener('click', () => { const o = navLinks.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
+  dd.querySelector('.dd-toggle').addEventListener('click', (e) => { e.stopPropagation(); const o = dd.classList.toggle('open'); e.currentTarget.setAttribute('aria-expanded', o); });
+  document.addEventListener('click', (e) => { if (!dd.contains(e.target)) dd.classList.remove('open'); });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); dd.classList.remove('open'); burger.setAttribute('aria-expanded', false); }));
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const form = document.getElementById('quoteForm');
+  const msg = document.getElementById('formMsg');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button');
+    btn.disabled = true; btn.textContent = 'Sending...';
+    msg.className = 'form-msg';
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        form.reset();
+        msg.textContent = "Got it! I'll reach out shortly. Need it sooner? Call (667) 967-9166.";
+        msg.classList.add('ok');
+      } else { throw new Error(); }
+    } catch {
+      msg.textContent = "Something went wrong. Please call or text (667) 967-9166 instead.";
+      msg.classList.add('err');
+    }
+    btn.disabled = false; btn.textContent = 'Send My Request';
+  });
+</script>
 </body>
 </html>
