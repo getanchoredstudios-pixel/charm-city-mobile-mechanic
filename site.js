@@ -8,6 +8,10 @@ navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   navLinks.classList.remove('open');
   burger?.setAttribute('aria-expanded', 'false');
 }));
+document.querySelectorAll('.dd-toggle').forEach(t => t.addEventListener('click', () => {
+  const open = t.parentElement.classList.toggle('open');
+  t.setAttribute('aria-expanded', open);
+}));
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 const PAY = { cashtag: '$keys2anotherworld', zelle: '', cardLink: '' };
